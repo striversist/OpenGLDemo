@@ -7,12 +7,12 @@ import android.opengl.GLSurfaceView;
 
 public class MyGLRenderer implements GLSurfaceView.Renderer {
 
-    private Shape mShape;
+    private Triangle mTriangle;
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         gl.glClearColor(0.7f, 0.7f, 0.7f, 1.0f);
-        mShape = new Shape();
+        mTriangle = new Triangle();
     }
     
     @Override
@@ -25,6 +25,6 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
         gl.glLoadIdentity();
         
-        mShape.draw(gl);
+        mTriangle.draw(gl);
     }
 }
