@@ -18,6 +18,7 @@ public class Triangle {
            -1.0f,  0.0f, -0.5f,  // bottom left
             1.0f,  0.0f, -0.5f,  // bottom right
     };
+    static float rotation = 0.0f;
     
     public Triangle() {
         ByteBuffer bb = ByteBuffer.allocateDirect(triangleCoords.length * 4);
@@ -31,11 +32,14 @@ public class Triangle {
     public void draw(GL10 gl) {
         gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
         
+        gl.glRotatef(rotation, 0.0f, 0.0f, 1.0f);
         gl.glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
         gl.glVertexPointer(COORDS_PER_VERTEX, GL10.GL_FLOAT, 0, mVetextBuffer);
         // 最后一个参数为数组中顶点的数目
         gl.glDrawArrays(GL10.GL_TRIANGLES, 0, triangleCoords.length / COORDS_PER_VERTEX);
         
         gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
+        
+        rotation += 0.5f;
     }
 }
