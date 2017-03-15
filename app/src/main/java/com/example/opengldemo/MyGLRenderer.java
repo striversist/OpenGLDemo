@@ -10,12 +10,14 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
     private Triangle mTriangle;
     private Square mSquare;
+    private Cube mCube;
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         gl.glClearColor(0.7f, 0.7f, 0.7f, 1.0f);
         mTriangle = new Triangle();
         mSquare = new Square();
+        mCube = new Cube();
     }
     
     @Override
@@ -58,5 +60,6 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         
 //        mTriangle.draw(gl);
         mSquare.draw(gl);
+//        mCube.draw(gl);
     }
 }
