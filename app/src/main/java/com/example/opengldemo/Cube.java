@@ -91,7 +91,7 @@ public class Cube {
     public void draw(GL10 gl) {
 
         gl.glEnable(GL10.GL_CULL_FACE);
-        gl.glCullFace(GLES10.GL_FRONT_AND_BACK);
+        gl.glCullFace(GLES10.GL_FRONT);
 
         GLES10.glColorPointer(4, GLES10.GL_FLOAT, 0, mColorBuffer);
         GLES10.glVertexPointer(3, GLES10.GL_FLOAT, 0, mVertexBuffer);

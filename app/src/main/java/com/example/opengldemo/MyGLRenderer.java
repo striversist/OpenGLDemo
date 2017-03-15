@@ -56,10 +56,10 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         // When using GL_MODELVIEW, you must set the camera view
         // 把自己的眼睛当成是照相机，前三个参数表示眼睛的坐标，中间三个参数表示要拍照的物体的中心位置，可以理解成焦点吧，
         // 后三个参数表示头顶的朝向
-        GLU.gluLookAt(gl, 0, 0, -5, 0f, 0f, 0f, 0.0f, 1.0f, 0.0f);
+        GLU.gluLookAt(gl, 0, 0, 5, 0f, 0f, 0f, 0.0f, 1.0f, 0.0f);
         
 //        mTriangle.draw(gl);
-        mSquare.draw(gl);
-//        mCube.draw(gl);
+//        mSquare.draw(gl);
+        mCube.draw(gl);
     }
 }
