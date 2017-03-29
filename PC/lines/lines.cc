@@ -88,6 +88,9 @@ void drawLines2(GLfloat data[], int points) {
     glDisableClientState(GL_VERTEX_ARRAY);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+    glDeleteBuffers(1, &vbo);
+    delete tmpBuffer;
 }
 
 void drawLines3(GLfloat data[], int points) {
@@ -136,7 +139,7 @@ void display(void)
     };
     int points = (sizeof(g_vertex_buffer_data)/sizeof(g_vertex_buffer_data[0])) / 3;
 
-    int choose_method = 3;
+    int choose_method = 2;
     switch (choose_method) {
         case 1:
             drawLines1(g_vertex_buffer_data, points);
